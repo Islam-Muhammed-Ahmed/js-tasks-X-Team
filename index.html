@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First js project</title>
+    <!--==========font awesome css===============-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <!--====== bootstrap v4.6 minfied file =======-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--====== editable Css File =======-->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!--============header for dark mode button==============-->
+    <header>
+        <div class="container-fluid">
+            <div class="col-sm-12 mt-3 custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="dark">
+                <label for="dark" class="custom-control-label">Dark Mode</label>
+            </div>
+        </div>
+    </header>
+    <!--============End header for dark mode button==============-->
+
+    <!--============start main==============-->
+    <main>
+        <div class="cotainer">
+            <h1>Weather</h1>
+            <input type="text" class="inputTxt" placeholder="Enter your City....">
+            <input type="submit" value="Search" class="btn-1">
+            <div class="showData"></div>
+        </div>
+    </main>
+
+    <!--============End main==============-->
+
+    <!--================Section for StopWatch=============-->
+
+    <section class="Watch">
+        <h3>Stop Watch</h3>
+        <div class="timerDisplay">
+            00 : 00 : 00 : 00
+        </div>
+        <div class="buttons">
+            <button id="startTimer">Start</button>
+            <button id="stopTimer">Stop</button>
+            <button id="resetTimer">Reset</button>
+        </div>
+    </section>
+
+    <!--================End Section for StopWatch=============-->
+
+    <!--================Section for calculator=============-->
+    <section class="container-fluid">
+        <h3>Calculator for Simble Arithmetic operations</h3>
+        <button id="showCalc">Hide Calculator</button>
+        <div class="main-calc" id="main-calc">
+            <form name="form">
+                <input type="text" name="textview" class="textview">
+            </form>
+            <div class="number_and_operators">
+                <div class="col-3">
+                    <button type="button" value="c" class="button top-button" onclick="clean();">C</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="%" class="button top-button" onclick="insert('%')">%</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="Del" class="button top-button" onclick="back();">Del</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="&#247;" class="button operators" onclick="insert('/')">/</button>
+                </div>
+            </div>
+            <div class="number_and_operators">
+                <div class="col-3">
+                    <button type="button" value="7" class="button" onclick="insert(7);">7</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="8" class="button" onclick="insert(8);">8</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="9" class="button" onclick="insert(9);">9</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="&#215;" class="button operators" onclick="insert('*');">*</button>
+                </div>
+            </div>
+            <div class="number_and_operators">
+                <div class="col-3">
+                    <button type="button" value="4" class="button" onclick="insert(4);">4</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="5" class="button" onclick="insert(5);">5</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="6" class="button" onclick="insert(6);">6</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="&#8722;" class="button operators" onclick="insert('-');">-</button>
+                </div>
+            </div>
+            <div class="number_and_operators">
+                <div class="col-3">
+                    <button type="button" value="1" class="button" onclick="insert(1);">1</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="2" class="button" onclick="insert(2);">2</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="3" class="button" onclick="insert(3);">3</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="&#43;" class="button operators" onclick="insert('+');">+</button>
+                </div>
+            </div>
+            <div class="number_and_operators">
+                <div class="col-3">
+                    <button type="button" value="." class="button" onclick="insert('.');">.</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" value="0" class="button" onclick="insert(0);">0</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" value="&#61" class="button equal" onclick=" equal();">=</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--================End Section for calculator=============-->
+
+    <section class="sec-1">
+        <h4>try to calc the average value for this Array using JS</h4>
+        <p contenteditable="true" class="editable">
+            var x= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+        </p>
+        <textarea id="textarea" cols="40" rows="12" placeholder="write your answer here"></textarea>
+
+        <button id="btn-2">average value</button>
+        <span id="btn-1" style="display: none;"></span>
+    </section>
+
+    <!-- ======== jquery file offline ======== -->
+    <script src="js/jquery-3.5.1.slim.min.js "></script>
+
+    <!-- ========Java script minified offline======== -->
+    <script src="js/popper.min.js "></script>
+
+    <!-- ========Java script bootstrap v4.6 minified offline======== -->
+    <script src="js/bootstrap.min.js "></script>
+    <!--==========font awesome js===============-->
+    <script src="js/all.js"></script>
+    <!-- ========My Java script File======== -->
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
